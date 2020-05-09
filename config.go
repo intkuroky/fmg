@@ -1,7 +1,6 @@
 package fmg
 
 import (
-	"github.com/fpay/pos-api-go/contracts"
 	"github.com/spf13/viper"
 )
 
@@ -32,7 +31,6 @@ type Options struct {
 	Log   *LogOptions
 	Db    *DbOptions
 	Redis *RedisOptions
-	Rsa   *contracts.RsaOptions
 }
 
 func InitConfig(cfgFile string) {
