@@ -1,0 +1,38 @@
+env:
+  app_env: "development"
+  static_version: "1442481810"
+  static_host: "localhost"
+
+server:
+  port: 10086
+
+logging:
+  template: "pos-api-{{.Time}}.log"
+  root: "/Users/kky/go/src/github.com/fpay/pos-api-go/logs"
+
+db:
+  options:
+    - name: web
+      driver: mysql
+      dsn: "root:intkuroky@tcp(127.0.0.1:3306)/web?timeout=3s&charset=utf8&parseTime=True&loc=Local"
+      max_idle: 10
+      max_active: 30
+    - name: pos
+      driver: mysql
+      dsn: "root:intkuroky@tcp(127.0.0.1:3306)/pos?timeout=3s&charset=utf8&parseTime=True&loc=Local"
+      max_idle: 10
+      max_active: 30
+
+redis:
+  options:
+    - name: "ms"
+      addr: "127.0.0.1:6379"
+      password: ""
+      db: 0
+      max_idle: 10
+      max_active: 30
+
+rsa:
+  public_key: "/Users/kky/go/src/github.com/fpay/pos-api-go/keys/rsa_public_key.pem"
+  private_key: "/Users/kky/go/src/github.com/fpay/pos-api-go/keys/rsa_private_key.pem"
+
