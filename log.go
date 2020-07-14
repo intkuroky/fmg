@@ -19,21 +19,21 @@ func init() {
 	//log.Formatter = new(logrus.TextFormatter) // default
 	Log.Level = logrus.DebugLevel
 
-	if !IsDirExists(GetPath() + "/Runtime") {
-		if mkdirerr := MkdirFile(GetPath() + "/Runtime"); mkdirerr != nil {
-			fmt.Println(mkdirerr)
-		}
-	}
-
-	logfile, err = os.OpenFile(GetPath() + "/Runtime/" + time.Now().Format("2006-01-02") + ".log", os.O_RDWR | os.O_APPEND, 0666)
-	if err != nil {
-		logfile, err = os.Create(GetPath() + "/Runtime/" + time.Now().Format("2006-01-02") + ".log")
-		if err != nil {
-			fmt.Println(err)
-		}
-	}
-	LogS.Out = logfile
-	day = time.Now().Format("02")
+	//if !IsDirExists(GetPath() + "/Runtime") {
+	//	if mkdirerr := MkdirFile(GetPath() + "/Runtime"); mkdirerr != nil {
+	//		fmt.Println(mkdirerr)
+	//	}
+	//}
+	//
+	//logfile, err = os.OpenFile(GetPath() + "/Runtime/" + time.Now().Format("2006-01-02") + ".log", os.O_RDWR | os.O_APPEND, 0666)
+	//if err != nil {
+	//	logfile, err = os.Create(GetPath() + "/Runtime/" + time.Now().Format("2006-01-02") + ".log")
+	//	if err != nil {
+	//		fmt.Println(err)
+	//	}
+	//}
+	//LogS.Out = logfile
+	//day = time.Now().Format("02")
 }
 
 // 检测是否跨天了,把记录记录到新的文件目录中
